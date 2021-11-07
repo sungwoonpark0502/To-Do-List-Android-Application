@@ -15,6 +15,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="137dp"
+        android:layout_marginBottom="10dp"
         android:autoText="false"
         android:background="#F8F05D"
         android:capitalize="characters"
@@ -32,12 +33,14 @@
         android:layout_width="75dp"
         android:layout_height="48dp"
         android:layout_marginStart="55dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="230dp"
         android:background="#F8F05D"
         android:text="Password"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/button2"
@@ -45,13 +48,15 @@
         android:layout_width="110dp"
         android:layout_height="50dp"
         android:layout_marginStart="160dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="130dp"
         android:background="#FBFBFA"
         android:backgroundTint="#FFEB3B"
         android:foregroundTint="@color/black"
         android:text="Log in"
         android:textColor="#F9FAFA"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextTextPassword" />
 
@@ -60,9 +65,11 @@
         android:layout_width="175dp"
         android:layout_height="51dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
         android:ems="10"
         android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
@@ -71,12 +78,14 @@
         android:layout_width="177dp"
         android:layout_height="54dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginBottom="10dp"
         android:autoLink="all"
         android:autoText="false"
         android:backgroundTint="#252222"
         android:ems="10"
         android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -99,7 +108,7 @@
         android:layout_width="147dp"
         android:layout_height="20dp"
         android:layout_marginStart="75dp"
-        android:layout_marginBottom="94dp"
+        android:layout_marginBottom="70dp"
         android:background="#FFFFFF"
         android:text="Don't have an account !"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -109,11 +118,13 @@
         android:id="@+id/button"
         android:layout_width="92dp"
         android:layout_height="48dp"
+        android:layout_marginStart="10dp"
         android:layout_marginEnd="101dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="55dp"
         android:text="Sign up"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
