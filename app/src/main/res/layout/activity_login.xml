@@ -4,15 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wp2562160"
+    android:backgroundTintMode="add"
+    android:visibility="visible"
     tools:context=".LoginActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/textView"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:alpha="`"
+        android:autoText="false"
+        android:background="#F8F05D"
+        android:capitalize="characters"
+        android:fontFamily="monospace"
+        android:text="Email"
+        android:textAlignment="inherit"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:background="#F8F05D"
+        android:text="Password"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="290dp" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:background="#FBFBFA"
+        android:backgroundTint="#FFEB3B"
+        android:foregroundTint="@android:color/holo_orange_light"
+        android:text="Log in"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="405dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="290dp" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:backgroundTint="#252222"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="343dp"
+        android:layout_height="71dp"
+        android:background="#FFFFFF"
+        android:text="Todo-List 5.0"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:autoSizeTextType="none"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="47dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="147dp"
+        android:layout_height="20dp"
+        android:background="#FFFFFF"
+        android:text="Don't have an account !"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="644dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="92dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="182dp"
+        android:text="Sign up"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        tools:layout_editor_absoluteX="222dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
