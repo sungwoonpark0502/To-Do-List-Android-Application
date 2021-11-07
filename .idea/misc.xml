@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.15070921985815602" />
-        <entry key="app/src/main/res/layout/activity_todolist.xml" value="0.15070921985815602" />
+        <entry key="..\:/Android Studio Workspace/TodoList5/app/src/main/res/layout/activity_login.xml" value="0.1625" />
+        <entry key="..\:/Android Studio Workspace/TodoList5/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
+        <entry key="..\:/Android Studio Workspace/TodoList5/app/src/main/res/layout/activity_signup.xml" value="0.1625" />
+        <entry key="..\:/Android Studio Workspace/TodoList5/app/src/main/res/layout/activity_todolist.xml" value="0.264" />
       </map>
     </option>
   </component>
