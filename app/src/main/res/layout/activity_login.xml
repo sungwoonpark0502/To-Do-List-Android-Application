@@ -17,12 +17,12 @@
         android:layout_marginStart="45dp"
         android:layout_marginBottom="10dp"
         android:autoText="false"
-        android:background="#FBFBF9"
+        android:background="#262727"
         android:capitalize="characters"
         android:fontFamily="@font/telex"
         android:text="Email"
         android:textAlignment="inherit"
-        android:textColor="#090404"
+        android:textColor="#FCFDFD"
         android:textSize="20sp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
@@ -34,10 +34,10 @@
         android:layout_height="48dp"
         android:layout_marginStart="45dp"
         android:layout_marginBottom="180dp"
-        android:background="#FBFBF9"
+        android:background="#262727"
         android:fontFamily="@font/telex"
         android:text="Password"
-        android:textColor="#040303"
+        android:textColor="#FBF9F9"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="parent" />
@@ -50,16 +50,14 @@
         android:layout_marginStart="160dp"
         android:layout_marginTop="35dp"
         android:layout_marginBottom="130dp"
-        android:background="@color/black"
+        android:background="#037FD1"
         android:fontFamily="@font/telex"
-        android:foregroundTint="@color/black"
         android:text="Log in"
         android:textColor="#F9FAFA"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextTextPassword"
-        tools:backgroundTint="#037FD1" />
+        app:layout_constraintTop_toBottomOf="@id/editTextTextPassword" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -71,6 +69,7 @@
         android:backgroundTint="#E8D9D9"
         android:ems="10"
         android:inputType="textPassword"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
@@ -87,6 +86,7 @@
         android:backgroundTint="#E8D9D9"
         android:ems="10"
         android:inputType="textEmailAddress"
+        android:textColor="#FDFAFA"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -100,7 +100,7 @@
         android:background="#262727"
         android:fontFamily="@font/telex"
         android:text=" Todo-List "
-        android:textColor="#0DA5F6"
+        android:textColor="#6CC0ED"
         android:textSize="48sp"
         android:textStyle="bold"
         app:autoSizeTextType="none"
@@ -113,9 +113,10 @@
         android:layout_height="20dp"
         android:layout_marginStart="75dp"
         android:layout_marginBottom="70dp"
-        android:background="#FFFFFF"
+        android:background="#262727"
         android:fontFamily="@font/telex"
         android:text="Don't have an account !"
+        android:textColor="#FBFAFA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
