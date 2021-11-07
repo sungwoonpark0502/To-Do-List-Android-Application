@@ -33,7 +33,7 @@
         android:layout_width="90dp"
         android:layout_height="48dp"
         android:layout_marginStart="45dp"
-        android:layout_marginBottom="180dp"
+        android:layout_marginBottom="200dp"
         android:background="#262727"
         android:fontFamily="@font/telex"
         android:text="Password"
