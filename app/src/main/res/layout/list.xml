@@ -1,107 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="318dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:fontFamily="@font/telex"
-        android:inputType="textPersonName"
-        android:text="Todo-List"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="18dp"
-        android:fontFamily="@font/telex"
-        android:text="CheckBox"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        <EditText
+            android:id="@+id/insertTodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="Add Todo"
+            android:inputType="textEmailAddress" />
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="11dp"
-        android:text="CheckBox"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="11dp"
-        android:text="CheckBox"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+            <ListView
+                android:id="@+id/todoList"
+                style="@style/Widget.AppCompat.ListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="11dp"
-        android:text="CheckBox"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
-
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="11dp"
-        android:text="CheckBox"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
-
-    <CheckBox
-        android:id="@+id/checkBox6"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="11dp"
-        android:text="CheckBox"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="57dp"
-        android:layout_height="58dp"
-        android:clickable="true"
-        app:srcCompat="@android:drawable/ic_menu_add"
-        tools:layout_editor_absoluteX="351dp"
-        tools:layout_editor_absoluteY="100dp" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="67dp"
-        android:layout_height="49dp"
-        android:backgroundTint="#1AC5AB"
-        android:text="Edit"
-        android:textColor="#0C0B0B"
-        tools:layout_editor_absoluteX="344dp"
-        tools:layout_editor_absoluteY="169dp" />
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
