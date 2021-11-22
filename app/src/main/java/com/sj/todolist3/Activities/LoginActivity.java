@@ -1,10 +1,14 @@
-package com.sj.todolist3;
+package com.sj.todolist3.Activities;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,10 +18,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.sj.todolist3.Data;
+import com.sj.todolist3.R;
+import com.sj.todolist3.User;
 
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +52,12 @@ public class LoginActivity extends AppCompatActivity {
     };
 
     public void logIn() {
-        String email = ((EditText)findViewById(R.id.editTextEmailAddress)).getText().toString();
-        email += "@osu.edu";
+        final String[] email = {((EditText) findViewById(R.id.editTextEmailAddress)).getText().toString()};
         String password = ((EditText)findViewById(R.id.editTextPassword)).getText().toString();
-        if (email.isEmpty() || password.isEmpty()) {
+        if (email[0].isEmpty() || password.isEmpty()) {
             startToast("email or password is not correct");
         } else {
-            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword(email[0], password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
@@ -59,8 +66,14 @@ public class LoginActivity extends AppCompatActivity {
                         // After pressing the login button, check rather this user verified their email or not
                         if (user.isEmailVerified()) {
                             startToast("Login Success");
-                            Data.setEmail(((EditText)findViewById(R.id.editTextEmailAddress)).getText().toString());
-                            listStartAcitivty(TodoListActivity.class);
+                            User loginUser = new User();
+                            loginUser.setEmail(((EditText)findViewById(R.id.editTextEmailAddress)).getText().toString());
+                            ((EditText) findViewById(R.id.editTextEmailAddress)).getText().clear();
+                            ((EditText) findViewById(R.id.editTextPassword)).getText().clear();
+//                            if (!Data.isCurrUser(loginUser.getEmail())) {
+//                                Data.addNewUser(loginUser.getEmail());
+//                            }
+                            listStartAcitivty(TodoListActivity.class, loginUser);
                         } else {
                             startToast("Please verify your email before log in");
                         }
@@ -97,8 +110,39 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
-    private void listStartAcitivty(Class c) {
+    private void listStartAcitivty(Class c, User user) {
         Intent intent = new Intent(this, c);
+        intent.putExtra("User Email", user.getEmail());
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            onBackPressed();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Here you want to show the user a dialog box
+        Log.d("BACK BUTTON", " is pressed");
+        new AlertDialog.Builder(this)
+                .setTitle("Exiting the App")
+                .setMessage("Are you sure?")
+                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        // The user wants to leave - so dismiss the dialog and exit
+                        FirebaseAuth.getInstance().signOut();
+                        finish();
+                        dialog.dismiss();
+                    }
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                // The user is not sure, so you can exit or just stay
+                dialog.dismiss();
+            }
+        }).show();
     }
 }

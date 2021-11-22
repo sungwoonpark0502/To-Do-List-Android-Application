@@ -20,4 +20,11 @@ public class Todo {
         return "";
     }
 
+    public ArrayList<String> getTodoList() {
+        return todoList;
+    }
+
+    public void setTodoList(ArrayList<String> todoList) {
+        this.todoList = todoList;
+    }
 }
